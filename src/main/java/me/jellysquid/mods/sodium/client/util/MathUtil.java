@@ -11,4 +11,10 @@ public class MathUtil {
     public static long toMib(long bytes) {
         return bytes / (1024L * 1024L); // 1 MiB = 1048576 (2^20) bytes
     }
+
+    public static int align(int num, int alignment) {
+        int additive = alignment - 1;
+        int mask = ~additive;
+        return (num + additive) & mask;
+    }
 }
